@@ -1,0 +1,13 @@
+[Unit]
+Description=HostBoxCP AGUSR
+After=network.target
+
+[Service]
+User=hostboxcp
+Group=hostboxcp
+WorkingDirectory=/usr/local/hbcp/
+ExecStart=/usr/local/hbcp/hbcpagusr
+RuntimeDirectory=hbcp-agusr
+
+[Install]
+WantedBy=multi-user.target

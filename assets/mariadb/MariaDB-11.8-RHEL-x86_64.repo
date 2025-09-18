@@ -1,0 +1,7 @@
+# MariaDB 11.8 RHEL repository list
+[mariadb]
+name = MariaDB 11.8 for RHEL $releasever - $basearch
+baseurl = https://yum.mariadb.org/11.8/rhel$releasever-amd64
+module_hotfixes=1
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1

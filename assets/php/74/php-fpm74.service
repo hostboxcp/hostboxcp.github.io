@@ -1,0 +1,15 @@
+[Unit]
+Description=The PHP 7.4 FastCGI Process Manager
+Documentation=man:php-fpm7.4(8)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/hb/php74/sbin/php-fpm --nodaemonize --fpm-config /etc/php/74/php-fpm.conf
+#ExecStartPost=-/usr/lib/php/php-fpm-socket-helper install /run/php/php-fpm74.sock /etc/php/74/php-fpm.d/www.conf 74
+#ExecStopPost=-/usr/lib/php/php-fpm-socket-helper remove /run/php/php-fpm74.sock /etc/php/74/php-fpm.d/www.conf 74
+ExecReload=/bin/kill -USR2 $MAINPID
+RuntimeDirectory=php-fpm
+
+[Install]
+WantedBy=multi-user.target

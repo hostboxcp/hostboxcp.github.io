@@ -1,0 +1,1 @@
+bind_socket = "/run/rspamd/worker-controller.socket mode=0666 owner=_rspamd";

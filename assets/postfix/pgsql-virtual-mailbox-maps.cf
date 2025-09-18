@@ -1,0 +1,5 @@
+user = %maildbuser%
+password = %maildbpass%
+hosts = 127.0.0.1
+dbname = %maildb%
+query = SELECT 1 FROM email_users WHERE email='%s'

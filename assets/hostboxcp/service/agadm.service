@@ -1,0 +1,13 @@
+[Unit]
+Description=HostBoxCP AGADM
+After=network.target
+
+[Service]
+User=hostboxcp
+Group=hostboxcp
+WorkingDirectory=/usr/local/hbcp/
+ExecStart=/usr/local/hbcp/hbcpagadm
+RuntimeDirectory=hbcp-agadm
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=%project_name%
+After=network.target
+
+[Service]
+WorkingDirectory=%project_dir%
+#Environment="PATH=%project_dir%/virtenv/bin"
+ExecStart=%project_dir%/virtenv/bin/uwsgi -L --socket %user_tmp_dir%/%socket_file%.sock --enable-threads --chdir %project_dir% --uid %user% --gid %user% --wsgi-file %mainapp%/wsgi.py --logto %user_log_dir%/%log_file%.log
+
+[Install]
+WantedBy=multi-user.target

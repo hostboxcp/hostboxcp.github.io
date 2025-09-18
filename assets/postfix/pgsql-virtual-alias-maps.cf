@@ -1,0 +1,5 @@
+user = %maildbuser%
+password = %maildbpass%
+hosts = 127.0.0.1
+dbname = %maildb%
+query = SELECT destination FROM email_aliases WHERE source='%s'

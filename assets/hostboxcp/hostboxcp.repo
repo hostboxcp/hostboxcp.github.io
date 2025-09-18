@@ -1,0 +1,6 @@
+[hostboxcp]
+name=HostBoxCP Repository for RHEL $releasever - $basearch
+baseurl=https://repo.hostboxcp.com/hostboxcp/yum/$releasever/$basearch/
+enabled=1
+gpgkey=https://hostboxcp.com/RPM-GPG-KEY-HOSTBOXCP
+gpgcheck=0

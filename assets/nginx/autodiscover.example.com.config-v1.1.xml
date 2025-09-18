@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<clientConfig version="1.1">
+  <emailProvider id="%domain%">
+    <domain>%domain%</domain>
+    <displayName>Example.org Mail Server</displayName>
+    <displayShortName>Organisation example</displayShortName>
+    <incomingServer type="imap">
+      <hostname>mail.%domain%</hostname>
+      <port>143</port>
+      <socketType>STARTTLS</socketType>
+      <authentication>password-cleartext</authentication>
+      <username>%EMAILADDRESS%</username>
+    </incomingServer>
+    <outgoingServer type="smtp">
+      <hostname>mail.%domain%</hostname>
+      <port>587</port>
+      <socketType>STARTTLS</socketType>
+      <authentication>password-cleartext</authentication>
+      <username>%EMAILADDRESS%</username>
+    </outgoingServer>
+    <documentation url="https://%domain%/">
+      <descr lang="en">Homepage</descr>
+    </documentation>
+  </emailProvider>
+</clientConfig>

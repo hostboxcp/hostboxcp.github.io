@@ -1,0 +1,15 @@
+[Unit]
+Description=The PHP 8.1 FastCGI Process Manager
+Documentation=man:php-fpm8.1(8)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/hb/php81/sbin/php-fpm --nodaemonize --fpm-config /etc/php/81/php-fpm.conf
+#ExecStartPost=-/usr/lib/php/php-fpm-socket-helper install /run/php/php-fpm.sock /etc/php/81/fpm/pool.d/www.conf 81
+#ExecStopPost=-/usr/lib/php/php-fpm-socket-helper remove /run/php/php-fpm.sock /etc/php/81/fpm/pool.d/www.conf 81
+ExecReload=/bin/kill -USR2 $MAINPID
+RuntimeDirectory=php-fpm
+
+[Install]
+WantedBy=multi-user.target

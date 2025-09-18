@@ -1,0 +1,6 @@
+[angie]
+name=Angie repo
+baseurl=https://download.angie.software/angie/rocky/$releasever/
+gpgcheck=1
+enabled=1
+gpgkey=https://angie.software/keys/angie-signing.gpg.asc

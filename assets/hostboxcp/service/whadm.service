@@ -1,0 +1,17 @@
+[Unit]
+Description=HostBoxCP WHADM
+After=network.target
+
+[Service]
+User=hostboxcp
+Group=hostboxcp
+WorkingDirectory=/usr/local/hbcp/
+ExecStart=/usr/local/hbcp/hbcpwhadm  -c /usr/local/hbcp/hbcpwhadm.conf
+RuntimeDirectory=hbcp-whadm
+
+# Logging
+StandardOutput=append:/var/log/hostboxcp/hbcpwhadm.log
+StandardError=append:/var/log/hostboxcp/hbcpwhadm.log
+
+[Install]
+WantedBy=multi-user.target

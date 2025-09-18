@@ -1,0 +1,15 @@
+connect = host=localhost dbname=%mailserver% user=%mailuser% password=%mailuserpass%
+
+map {
+  pattern = priv/quota/storage
+  table = email_users
+  username_field = email
+  value_field = bytes
+}
+
+map {
+  pattern = priv/quota/messages
+  table = email_users
+  username_field = email
+  value_field = messages
+}

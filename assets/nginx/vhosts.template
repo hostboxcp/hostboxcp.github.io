@@ -1,0 +1,19 @@
+
+server {
+    listen      %ip%:80;
+    server_name %domain% www.%domain%;
+        
+    # include /%home%/%user%/conf/web/%domain%/nginx.forcessl.conf*;
+
+    # location @fallback {
+    #     proxy_pass      http://{ip}:8080;
+    # }
+
+    location ~ /\.(?!well-known\/|file) {
+       deny all; 
+       return 404;
+    }
+
+    # include /%home%/%user%/conf/web/%domain%/nginx.conf_*;
+}
+

@@ -1,0 +1,13 @@
+[Unit]
+Description=HostBoxCP MailOnly
+After=network.target
+
+[Service]
+User=hostboxcp
+Group=hostboxcp
+WorkingDirectory=/usr/local/hbcp/
+ExecStart=/usr/local/hbcp/hbcpmailonly
+RuntimeDirectory=hbcp-whmail
+
+[Install]
+WantedBy=multi-user.target

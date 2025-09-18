@@ -1,0 +1,17 @@
+[Unit]
+Description=HostBoxCP WHUSR
+After=network.target
+
+[Service]
+User=hostboxcp
+Group=hostboxcp
+WorkingDirectory=/usr/local/hbcp/
+ExecStart=/usr/local/hbcp/hbcpwhusr -c /usr/local/hbcp/hbcpwhusr.conf
+RuntimeDirectory=hbcp-whusr
+
+# Logging
+StandardOutput=append:/var/log/hostboxcp/hbcpwhusr.log
+StandardError=append:/var/log/hostboxcp/hbcpwhusr.log
+
+[Install]
+WantedBy=multi-user.target

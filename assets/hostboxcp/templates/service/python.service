@@ -1,0 +1,11 @@
+[Unit]
+Description=%Project Name%
+After=network.target
+
+[Service]
+WorkingDirectory=/%home%/%user%/%domain%/private/%project_path%
+#Environment="PATH=/%home%/%user%/%domain%/private/%project_path%/venv/bin"
+ExecStart=/%home%/%user%/%domain%/private/%project_path%/venv/bin/uwsgi -L --socket /%home%/%user%/%domain%/tmp/%slug%.sock --enable-threads --chdir /%home%/%user%/%domain%/private/%project_path% --wsgi-file %wsgi_file% --logto /%home%/%user%/%domain%/private/%project_path%/%slug%.log
+
+[Install]
+WantedBy=multi-user.target
