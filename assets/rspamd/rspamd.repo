@@ -1,0 +1,7 @@
+[rspamd]
+name=Rspamd stable repository
+baseurl=https://rspamd.com/rpm-stable/centos-$releasever/$basearch
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://rspamd.com/rpm/rspamd.asc
