@@ -1,0 +1,13 @@
+[Unit]
+Description=HostBoxCP DNSOnly
+After=network.target
+
+[Service]
+User=hostboxcp
+Group=hostboxcp
+WorkingDirectory=/usr/local/hbcp/
+ExecStart=/usr/local/hbcp/hbcpdnsonly
+RuntimeDirectory=hbcp-whdns
+
+[Install]
+WantedBy=multi-user.target

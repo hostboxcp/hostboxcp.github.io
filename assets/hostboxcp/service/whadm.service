@@ -6,7 +6,7 @@ After=network.target
 User=hostboxcp
 Group=hostboxcp
 WorkingDirectory=/usr/local/hbcp/
-ExecStart=/usr/local/hbcp/hbcpwhadm  -c /usr/local/hbcp/hbcpwhadm.conf
+ExecStart=/usr/local/hbcp/hbcpwhadm  -c /usr/local/hbcp/hbcpwh.conf
 RuntimeDirectory=hbcp-whadm
 
 # Logging
